@@ -7,11 +7,11 @@
                 <h1>GUIA PERGUNTAS</h1>
             </div>
             <div class="card-body">
-                <form>
+                <form method="POST" action="/salvapergunta">
                     <label>Titulo</label>
-                    <input type="text" placeholder="Titulo" class="form-control">
+                    <input type="text" placeholder="Titulo" class="form-control" name="titulo">
                     <label for="">Descrição</label>
-                    <textarea placeholder="Descrição" class="form-control"></textarea>
+                    <textarea placeholder="Descrição" class="form-control" name="descricao"></textarea >
                     <br>
                     <button class="btn btn-success">Enviar</button>
                 </form>
