@@ -1,3 +1,13 @@
 body {
     background-color: rgb(221, 214, 214);
 }
+
+.card-header , h1 {
+    color: black;
+    background-color: #ccc;
+    text-align: center;
+}
+
+.section--body  {
+    margin-top: 5vh;
+}
