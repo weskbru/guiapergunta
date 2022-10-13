@@ -4,5 +4,10 @@
 <body>
     <%- include('partials/navbar.ejs') %> 
     <h1>Pagina principal</h1>
+    <div class="container">
+        <% perguntas.forEach(perguntas => { %>
+            <p><%- perguntas.titulo %> </p>
+       <% }) %> 
+    </div>
 </body>
 <%- include('partials/footer.ejs') %> 

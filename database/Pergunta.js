@@ -16,3 +16,5 @@ const Pergunta = conection.define('perguntas', {
 Pergunta.sync({force:false}).then(() => {
     console.log('tabela criada')
 })
+
+module.exports = Pergunta;
