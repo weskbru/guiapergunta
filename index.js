@@ -58,6 +58,22 @@ app.post('/salvapergunta', (req ,res) => {
     })
 });
 
+// Criando a rota que leva a pagina das perguntas
+
+app.get('/pergunta/:id', (req, res) => {
+    let id = req.params.id;
+    Pergunta.findOne({
+        where: {id: id}
+    })
+    .then(pergunta => {
+        if(pergunta != undefined){
+            res.render('perguntas');
+        }else {
+            res.redirect('/')
+        }
+    })
+})
+
 
 //servidor
 app.listen(PORT, (err) => {
