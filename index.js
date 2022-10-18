@@ -25,6 +25,7 @@ app.get('/', (req,res) => {
     });
 });
 
+//rota pergunta
 app.get("/pergunta", (req,res) => {
     res.render('pergunta');
 });

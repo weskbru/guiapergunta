@@ -3,10 +3,23 @@
 <%- include("partials/header.ejs") %> 
 <body>
     <%- include('partials/navbar.ejs') %> 
-    <h1>Pagina principal</h1>
+
     <div class="container">
+        <hr>
+        <h1>Perguntas</h1>
+        <a href="/pergunta" class="btn btn-primary">Fazer nova pergunta</a>
+        <hr>
         <% perguntas.forEach(perguntas => { %>
-            <p><%- perguntas.titulo %> </p>
+            <br>
+            <div class="card">
+                <div class="card-body">
+                    <h3> <%- perguntas.titulo %> </h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary">Responder</button>
+                </div>
+            </div>
+
        <% }) %> 
     </div>
 </body>
