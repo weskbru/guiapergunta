@@ -18,7 +18,10 @@ app.set("view engine" , "ejs");
 
 // rotas 
 app.get('/', (req,res) => {
-    Pergunta.findAll({row:true}).then(perguntas => {
+    Pergunta.findAll({row:true, order: [
+        ['id', 'DESC']// ASC CRESCENTE , DESC DESCRECENTE 
+    ]})
+    .then(perguntas => {
         res.render('index', {
             perguntas: perguntas
         });
