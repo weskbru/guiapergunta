@@ -4,7 +4,8 @@ const PORT = 8080;
 const app = express()
 const conection = require("./database/databese")
 const Pergunta = require('./database/Pergunta')
-const Resposta = require('./database/Resposta')
+const Resposta = require('./database/Resposta');
+
 
 
 
@@ -78,6 +79,21 @@ app.get('/perguntaSelect/:id', (req, res) => {
         }
     })
 })
+
+// ROTA PARA RESPOSTA DO FORMULARIO 
+
+app.post('/responder',(req,res) => {
+    let corpoDaResposta = req.body.corpoDaResposta;
+    let perguntaId = req.body.pergunta;
+
+    Resposta.create({
+        corpoDaResposta: corpoDaResposta,
+        perguntaId: perguntaId
+    })
+    .then(() => {
+        res.redirect("/perguntaSelect/" + perguntaId)
+    })
+});
 
 
 //servidor
