@@ -4,6 +4,9 @@ const PORT = 8080;
 const app = express()
 const conection = require("./database/databese")
 const Pergunta = require('./database/Pergunta')
+const Resposta = require('./database/Resposta')
+
+
 
 // responsavel para traduzir os dados enviado pelo formulario
 app.use(bodyparse.urlencoded({extended:false}));
