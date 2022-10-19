@@ -60,14 +60,14 @@ app.post('/salvapergunta', (req ,res) => {
 
 // Criando a rota que leva a pagina das perguntas
 
-app.get('/pergunta/:id', (req, res) => {
+app.get('/perguntaSelect/:id', (req, res) => {
     let id = req.params.id;
     Pergunta.findOne({
         where: {id: id}
     })
     .then(pergunta => {
         if(pergunta != undefined){
-            res.render('perguntas');
+            res.render('perguntaSelect');
         }else {
             res.redirect('/')
         }
