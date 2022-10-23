@@ -70,11 +70,21 @@ app.get('/perguntaSelect/:id', (req, res) => {
         where: {id: id}
     })
     .then(pergunta => {
-        if(pergunta != undefined){
-            res.render('perguntaSelect', {
-                pergunta: pergunta
+        if(pergunta != undefined){ //pergunta encontrada
+
+            Resposta.findAll({
+                where: {perguntaId: pergunta.id},
+                order: [
+                    ['id', 'DESC']
+                ]
+            })
+            .then(respostas => {
+                res.render('perguntaSelect', {
+                    pergunta: pergunta,
+                    respostas: respostas
+                });
             });
-        }else {
+        }else { //pergunta nao encontrada retorna a pagina principal
             res.redirect('/')
         }
     })
@@ -91,7 +101,7 @@ app.post('/responder',(req,res) => {
         perguntaId: perguntaId
     })
     .then(() => {
-        res.redirect("/perguntaSelect/" + perguntaId)
+        res.redirect("/perguntaSelect/"+perguntaId)
     })
 });
 
