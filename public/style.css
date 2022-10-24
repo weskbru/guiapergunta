@@ -1,13 +1,9 @@
+
 body {
-    background-color: rgb(221, 214, 214);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
-.card-header , h1 {
-    color: black;
-    background-color: #ccc;
-    text-align: center;
-}
-
-.section--body  {
-    margin-top: 5vh;
+.navbar-brand img {
+    margin-left: 25px;
+    width: 100px;
 }

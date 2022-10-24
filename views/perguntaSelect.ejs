@@ -1,7 +1,7 @@
-<%- include('partials/header.ejs') -%> 
+<%- include('partials/head.ejs') -%> 
 
 <body>
-    <%- include('partials/navbar.ejs') -%> 
+    <%- include('partials/header.ejs') -%> 
     <div class="container">
        <hr>
        <h1><%- pergunta.titulo %> </h1>
@@ -19,15 +19,19 @@
        <h3>Respostas</h3>
        <hr>
        
-       <% respostas.forEach( respostas => { %>
+      <% respostas.forEach( respostas => { %>
         <br>
-          <div class="card">
+          <div class="card" style="width: 100%;">
             <div class="card-body">
-              <li><%= respostas.corpoDaResposta %></li>
+              <h5 class="card-title"><%- pergunta.titulo %> ?</h5><hr>
+              <h6 class="card-title"><%- pergunta.descricao %></h6>
+              <p class="card-text"><%= respostas.corpoDaResposta %></p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
             </div>
           </div>
-        
-       <% }) %> <br>
+
+      <% }) %> <br>
     </div>
 </body>
-<%- include('partials/footer.ejs') -%> 
+<%- include('partials/html.ejs') -%> 

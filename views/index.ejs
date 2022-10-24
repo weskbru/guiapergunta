@@ -1,13 +1,13 @@
 
- 
-<%- include("partials/header.ejs") %> 
-<body>
-    <%- include('partials/navbar.ejs') %> 
 
+<%- include("partials/head.ejs") %> 
+<body>
+    <!--Cabeçalho-->
+    <%- include('partials/header.ejs') %>
+    <!--Conteudo-->
     <div class="container">
-        <hr>
-        <h1>Perguntas</h1>
-        <a href="/pergunta" class="btn btn-primary">Fazer nova pergunta</a>
+        <h1>Fazer uma nova Perguntas</h1>
+        <a href="/pergunta" class="btn btn-primary">Perguntar</a>
         <hr>
         <% perguntas.forEach(perguntas => { %>
             <br>
@@ -19,8 +19,19 @@
                    <a href="/perguntaSelect/ <%=perguntas.id %> "><button class="btn btn-primary">Responder</button></a> 
                 </div>
             </div>
-
        <% }) %> 
     </div>
+    <!--Rodapé-->
+    <%- include('partials/footer.ejs') %> 
 </body>
-<%- include('partials/footer.ejs') %> 
+<%- include('partials/html.ejs') %> 
+
+
+
+
+
+
+
+
+
+
